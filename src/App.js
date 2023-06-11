@@ -22,7 +22,7 @@ function App() {
       title: 'new phone',
       amount: 5990.0,
       date: new Date(2023, 6, 3),
-      location: 'amazone',
+      location: ' Amazone',
     },
     {
       id: 'e4',
@@ -34,14 +34,13 @@ function App() {
   ];
   return (
     <div>
-      <h2>Let's get started!</h2>
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
         date={expenses[0].date}
         location={expenses[0].location}
       ></ExpenseItem>
-      
+
       <ExpenseItem
       title={expenses[1].title}
       amount={expenses[1].amount}
