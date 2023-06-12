@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
 // import './App.css';
-import './components/Expense.css'
-import ExpenseItem from "./components/ExpenseItem";
+import './components/Expense/Expense.css'
+import ExpenseItem from "./components/Expense/ExpenseItem";
 // import ExpenseItem from "./components/Expense";
-import Card from "./components/Card";
+import Card from "./components/UI/Card";
 
 function App() {
   const expenses = [
