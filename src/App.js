@@ -5,7 +5,7 @@ import ExpenseItem from "./components/Expense/ExpenseItem";
 // import ExpenseItem from "./components/Expense";
 import Card from "./components/UI/Card";
 
-function App() {
+const App=()=> {
   const expenses = [
     {
       id: 'e1',
