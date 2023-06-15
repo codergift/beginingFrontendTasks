@@ -4,6 +4,7 @@ import './components/Expense/Expense.css'
 import ExpenseItem from "./components/Expense/ExpenseItem";
 // import ExpenseItem from "./components/Expense";
 import Card from "./components/UI/Card";
+import NewExpense from "./components/NewExpense/NewExpense"
 
 const App=()=> {
   const expenses = [
@@ -39,7 +40,7 @@ const App=()=> {
   return (
     
     <Card className='expense'>
-      <h2>Let's start</h2>
+      <NewExpense />
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
