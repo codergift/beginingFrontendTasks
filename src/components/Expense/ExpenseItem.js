@@ -1,31 +1,30 @@
+import React, { useState} from "react";
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 import ExpenseDetails from "./ExpenseDetails";
 import Card from "../UI/Card";
 
 const ExpenseItem = (props) => {
+  const[title,setTitle]=useState (props.title);
+  const [amount, setAmount] = useState(props.amount);
+
   const clickHandler = () => {
-    console.log("Clicked!!!");
+    setTitle('updated!');
+    console.log(title); 
   };
 
-  const deleteExpenseHandler = () => {
-    // Perform the delete expense operation here
-    console.log('Deleting expense...');
-    // You can manipulate the DOM or trigger an API call to delete the expense
+  const changeExpenseHandler = () => {
+    setAmount(100);
   };
-
+  
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
 
-      <ExpenseDetails
-        amount={props.amount}
-        // location={props.location}
-        title={props.title}
-      />
-      <button on onClick={clickHandler}>Change title</button>
-
-      <button onClick={deleteExpenseHandler}>Delete Expense</button>
+      <ExpenseDetails amount={amount} title={title} />
+      <button onClick={changeExpenseHandler}>Change expense</button>
+      <button onClick={clickHandler}>Change title</button>
+      
     </Card>
   );
 };
