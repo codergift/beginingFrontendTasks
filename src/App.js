@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 // import logo from './logo.svg';
 // import './App.css';
 // import './components/Expense/Expense.css'
@@ -7,27 +8,27 @@ import Expense from "./components/Expense/Expense";
 import NewExpense from "./components/NewExpense/NewExpense"
 
 const App=()=> {
-  const expenses = [
+  const [expenses, setExpenses] = useState([
     {
       id: 'e1',
       title: 'Car Insurance',
       amount: 589.0,
       date: new Date(2023, 6, 11),
-      location:"Patna",
+      location: 'Patna',
     },
     {
       id: 'e2',
       title: 'Toilet Paper',
       amount: 91.0,
       date: new Date(2023, 6, 8),
-      location:'Patna',
+      location: 'Patna',
     },
     {
       id: 'e3',
       title: 'new phone',
       amount: 5990.0,
       date: new Date(2023, 6, 3),
-      location: ' Amazone',
+      location: 'Amazone',
     },
     {
       id: 'e4',
@@ -36,11 +37,10 @@ const App=()=> {
       date: new Date(2023, 6, 4),
       location: 'Patna',
     },
-  ];
+  ]);
 
-  const addExpenseHandler=expense=>{
-    console.log('in App.js');
-    console.log(expense);
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => [...prevExpenses, expense]);
   };
 
   // return (
