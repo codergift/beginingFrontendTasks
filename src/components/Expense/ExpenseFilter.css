@@ -1,5 +1,5 @@
 .expense-filter {
-    margin-bottom: 1rem;
+    margin: 1rem;
   }
   
   .expense-filter__control {
@@ -11,12 +11,14 @@
     /* font-weight: bold; */
     margin-right: 0.5rem;
     color: #ffffff;
+    
   }
   
   .expense-filter__control select {
+    margin-top: 0.5rem;
     font: inherit;
-    padding: 0.5rem;
+    padding: 0.1rem;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 3px solid #9e9898;
   }
   
