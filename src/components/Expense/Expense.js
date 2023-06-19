@@ -19,21 +19,36 @@ const Expense = (props) => {
     }
   });
 
+  let expensesContent = <p className="msg">No expenses found.</p>;
+
+  if (filterExpenses.length > 0) {
+    expensesContent = filterExpenses.map((expense) => (
+      <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+        location={expense.location}
+      />
+    ));
+
+    if (filterExpenses.length === 1) {
+      expensesContent = (
+        <React.Fragment>
+          {expensesContent}
+          <p className="msg">Only single Expense here. Please add more...</p>
+        </React.Fragment>
+      );
+    }
+  }
+
   return (
     <Card className="expense">
       <ExpenseFilter
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {filterExpenses.map((expense) => (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-          location={expense.location}
-        />
-      ))}
+      {expensesContent}
     </Card>
   );
 };
